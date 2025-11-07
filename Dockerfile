@@ -6,7 +6,7 @@ RUN make build
 
 FROM alpine:3 as alpine
 
-WORKDIR /
+WORKDIR /app/data
 COPY --from=builder /building/bin/ips /bin/ips
 EXPOSE 6860
 ENTRYPOINT ["/bin/ips", "server"]
